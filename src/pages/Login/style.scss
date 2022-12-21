@@ -1,0 +1,35 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    .decorative-container {
+        width: 100%;
+        height: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../../assets/images/login-decorative.svg');
+    }
+
+    .login-form {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .header {
+            margin-bottom: 15px;
+        }
+    }
+    
+    .forgot-link {
+        font-size: 14px;
+        text-align: right;
+        color: #0165FF;
+    }
+}
