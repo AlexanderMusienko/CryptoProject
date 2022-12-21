@@ -1,7 +1,21 @@
-.bottom-navbar {
-    display: flex !important;
-    width: 100% ;
-    justify-content: space-evenly;
-    position: fixed;
-    bottom: 0px;
+.main-page-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 0.1fr;
+    overflow: hidden;
+
+    .main-page-container {
+        display: flex;
+        max-height: 90vh;
+        overflow: hidden;
+
+    }
+
+    .bottom-navbar {
+        position: relative;
+        display: flex !important;
+        justify-content: space-evenly;
+        z-index: 1;
+
+    }
 }
