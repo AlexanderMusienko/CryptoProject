@@ -13,12 +13,12 @@ export default function ExchangeDesk() {
   const [currencyTab, setCurrencyTab] = useState("usdt");
 
   function chooseTab(setterFunc, e) {
-      setterFunc(e.target.innerHTML.toLowerCase());
-      console.log(e.target.innerHTML.toLowerCase());
+    setterFunc(e.target.innerHTML.toLowerCase());
+    console.log(e.target.innerHTML.toLowerCase());
   }
 
   return (
-    <Stack className="exchange-desk-container">
+    <>
       <Stack className="operation-tab-container">
         <FilterTabs
           tabsArr={operationTabsArr}
@@ -45,6 +45,6 @@ export default function ExchangeDesk() {
             />
           ))}
       </Stack>
-    </Stack>
+    </>
   );
 }

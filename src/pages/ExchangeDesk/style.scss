@@ -1,20 +1,16 @@
-.exchange-desk-container {
-    max-height: 100vh;
+.operation-tab-container {
 
-    .operation-tab-container {
-
-        .operation-tab-list {
-            z-index: 1;
-        }
-
-        .currency-tab-list {
-            z-index: 1;
-        }
+    .operation-tab-list {
+        z-index: 1;
     }
 
-
-    .tab-panel {
-        overflow-y: scroll;
-        padding: 0 15px;
+    .currency-tab-list {
+        z-index: 1;
     }
+}
+
+
+.tab-panel {
+    overflow-y: scroll;
+    padding: 0 15px;
 }

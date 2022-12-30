@@ -42,7 +42,7 @@ export default function Login({ onClickFunc }) {
           </InputRightElement>
         </InputGroup>
         <Link className="forgot-link">Forgot password?</Link>
-        <Button onClick={() => navigate("/main-page")}>Sign In</Button>
+        <Button onClick={() => navigate("/home")}>Sign In</Button>
       </form>
     </Stack>
   );

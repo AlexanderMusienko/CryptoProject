@@ -9,6 +9,12 @@ export default extendTheme({
         color: "white",
       },
     },
+    Tab: {
+      baseStyle: {
+        bg: 'button',
+        bgColor: 'button',
+      }
+    }
   },
   semanticTokens: {
     colors: {
