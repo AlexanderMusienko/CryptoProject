@@ -6,11 +6,25 @@ export default function BottomNavbar({ tabArr, className, ...rest }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  const currentTabIdx = tabArr.findIndex((tab) => tab.path === pathname);
+
   return (
-    <Tabs index={null} className="bottom-navbar-wrapper" {...rest}>
+    <Tabs
+      isManual
+      index={currentTabIdx}
+      className="bottom-navbar-wrapper"
+      {...rest}
+    >
       <TabList className="bottom-navbar-container">
-        {tabArr.map(({ title, icon, path }, id) => (
-          <Tab /* make active state of tab by comparing actual path and tab pathname */ onClick={() => navigate(path)} key={title + path} className="bottom-navbar-tab">{[icon, title]}</Tab>
+        {tabArr.map(({ title, icon, path }, idx) => (
+          <Tab
+            onClick={() => navigate(path)}
+            key={title + path}
+            className="bottom-navbar-tab"
+          >
+            {icon}
+            {title}
+          </Tab>
         ))}
       </TabList>
     </Tabs>
