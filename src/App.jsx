@@ -5,11 +5,14 @@ import HomePage from "./pages/HomePage";
 
 import "./styles/style.scss";
 import { FaHome, FaUserAlt, FaChartLine, FaPeopleArrows } from "react-icons/fa";
-import { Grid, Icon, ScaleFade, Switch } from "@chakra-ui/react";
+import { Grid, Icon } from "@chakra-ui/react";
 import ExchangeDesk from "./pages/ExchangeDesk";
 import BottomNavbar from "./components/BottomNavbar";
 import PageLayout from "./components/PageLayout";
 import NotFound from "./components/NotFound";
+
+import "./context/context.js";
+import { FilterContext } from "./context/context.js";
 
 const BOTTOM_NAV_DENYLIST = ["/", "*"];
 const APP_TABS = [
@@ -24,7 +27,8 @@ function App() {
   console.log(pathname);
   console.log("navbar should be showed:", !BOTTOM_NAV_DENYLIST.includes(pathname));
   return (
-    <Grid className="app-container">
+    <>
+      <Grid className="app-container">
         <Routes>
           <Route path="/" element={<Login />} />
           {/*need to make layout for each page with styles overflow: hidden*/}
@@ -50,8 +54,9 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
 
-      {!BOTTOM_NAV_DENYLIST.includes(pathname) && <BottomNavbar tabArr={APP_TABS} />}
-    </Grid>
+        {!BOTTOM_NAV_DENYLIST.includes(pathname) && <BottomNavbar tabArr={APP_TABS} />}
+      </Grid>
+    </>
   );
 }
 

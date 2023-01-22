@@ -1,15 +1,34 @@
-import { Divider, Stack, Stat, StatHelpText, StatLabel, StatNumber } from '@chakra-ui/react'
-import React from 'react'
+import React, { useContext } from "react";
+import { Button, Divider, Stack, Stat, StatHelpText, StatLabel, StatNumber } from "@chakra-ui/react";
+import AdvertiserInfo from "./AdvertiserInfo";
+import firstLetterToUpperCase from "../../../utils/firstLetterToUpperCase";
 
-export default function DealItem({priceCurrency, price, quantity, quantityCurrency}) {
+import "./style.scss";
+import { FilterContext } from "../../../context/context";
+
+export default function DealItem({ priceCurrency, price, quantity, quantityCurrency, advertiserInfo }) {
+  const { operationTab } = useContext(FilterContext);
+
   return (
-    <Stack>
-      <Divider orientation='horizontal' />
-      <Stat>
-        <StatLabel>Price</StatLabel>
-        <StatNumber>{priceCurrency}{price}</StatNumber>
-        <StatHelpText>Quantity {quantity} {quantityCurrency}</StatHelpText>
-      </Stat>
+    <Stack className="deal-item-container">
+      <Divider />
+      <AdvertiserInfo {...advertiserInfo} />
+
+      <Stack className="advertisement-item">
+        <Stat>
+          <StatLabel>Price</StatLabel>
+          <StatNumber>
+            {priceCurrency}
+            {price}
+          </StatNumber>
+          <StatHelpText>
+            Quantity {quantity} {quantityCurrency.toUpperCase()}
+          </StatHelpText>
+        </Stat>
+        <Button className="buy-sell-button">
+          {firstLetterToUpperCase(operationTab)} {quantityCurrency.toUpperCase()}
+        </Button>
+      </Stack>
     </Stack>
-  )
+  );
 }

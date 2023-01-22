@@ -1,26 +1,49 @@
 import { extendTheme } from "@chakra-ui/react";
+import { avatarAnatomy } from "@chakra-ui/anatomy";
+import { createMultiStyleConfigHelpers, defineStyle, defineStyleConfig } from "@chakra-ui/react";
+
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(avatarAnatomy.keys);
+
+const baseStyle = definePartsStyle({
+  // define the part you're going to style
+  container: {
+    bg: "avatar",
+  },
+});
+export const avatarTheme = defineMultiStyleConfig({ baseStyle });
 
 export default extendTheme({
   components: {
+    Avatar: avatarTheme,
     Button: {
-      baseStyle: {
-        bg: "button",
-        bgColor: "button",
-        color: "white",
+      variants: {
+        solid: {
+          bg: "button",
+          bgColor: "button",
+          color: "white",
+        },
+        solidGrey: {
+          bg: "secondButton",
+          _hover: {
+            bg: "",
+          },
+          _active: {
+            bg: "activeBg",
+            color: "activeBg"
+          },
+        },
       },
     },
-    Tab: {
-      baseStyle: {
-        bg: 'button',
-        bgColor: 'button',
-      }
-    }
   },
   semanticTokens: {
     colors: {
       error: "red.500",
       success: "green.500",
-      button: "#0165FF",
+      hoverBg: "",
+      activeBg: "white",
+      button: "#1975FF",
+      secondButton: "#E2E8F0",
+      avatar: "#FFB320",
       primary: {
         default: "#ffffff",
         _dark: "#1A202C",
@@ -32,4 +55,3 @@ export default extendTheme({
     },
   },
 });
-

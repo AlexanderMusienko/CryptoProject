@@ -1,8 +1,13 @@
-import { Stack, TabList, TabPanels, Tabs, Tab, TabPanel } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { Stack, } from "@chakra-ui/react";
+import { FilterContext } from "../../context/context.js";
+
 import DealItem from "./DealItem";
 import FilterTabs from "./FilterTabs";
-import fakeData from "../../data/fakeData";
+import DivNM from "../../components/NMDiv";
+
+import fakeData from "../../data/fakeAdvertisementData";
+
 import "./style.scss";
 
 const operationTabsArr = ["Buy", "Sell"];
@@ -18,7 +23,7 @@ export default function ExchangeDesk() {
   }
 
   return (
-    <>
+    <FilterContext.Provider value={{operationTab}}>
       <Stack className="operation-tab-container">
         <FilterTabs
           tabsArr={operationTabsArr}
@@ -32,19 +37,16 @@ export default function ExchangeDesk() {
         />
       </Stack>
 
-      <Stack className="tab-panel">
+      <DivNM className="tab-panel">
         {fakeData[currencyTab][operationTab]
           .sort((a, b) => a.price > b.price)
-          .map((item, i) => (
+          .map((advertisementItem, i) => (
             <DealItem
-              key={item.price + i}
-              price={item.price}
-              priceCurrency={item.priceCurrency}
-              quantity={item.quantity}
-              quantityCurrency={item.quantityCurrency}
+              key={advertisementItem.price + i}
+              {...advertisementItem}
             />
           ))}
-      </Stack>
-    </>
+      </DivNM>
+    </FilterContext.Provider>
   );
 }
