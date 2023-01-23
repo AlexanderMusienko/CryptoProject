@@ -17,7 +17,7 @@ import {
 import { BsPencilSquare, BsEyeSlash, BsEye } from "react-icons/bs";
 
 import fakeUserInfo from "../../data/fakeUserInfo.js";
-const { userName, userAvatar, accountStatus, estimatedBalanceCoin, estimatedBalanceFiat } = fakeUserInfo;
+const { userName, userAvatar, accountStatus, estimatedBalanceCoins, estimatedBalanceFiats } = fakeUserInfo;
 
 import "./style.scss";
 import EstimatedBalance from "./EstimatedBalance/index.jsx";
@@ -48,9 +48,17 @@ export default function HomePage() {
           size={"sm"}
         />
       </HStack>
-        {balanceVisibility ? 
-        <EstimatedBalance estimatedBalanceCoin={0} coin={'btc'} coinOptions={["btc", "eth"]}/> 
-        : <Skeleton height={'40px'} speed={0}>Balance was hidden</Skeleton>}
+      {balanceVisibility ? (
+        <EstimatedBalance
+          estimatedBalanceCoins={estimatedBalanceCoins}
+          estimatedBalanceFiats={estimatedBalanceFiats}
+          coinOptions={["btc", "eth"]}
+        />
+      ) : (
+        <Skeleton height={"40px"} speed={0}>
+          Balance was hidden
+        </Skeleton>
+      )}
     </Stack>
   );
 }

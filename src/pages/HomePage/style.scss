@@ -19,12 +19,22 @@
 
     .balance-header {
         align-items: baseline;
+        margin-bottom: 10px;
     }
 
     .balance-container {
-
+        font-size: 22px;
+        
         .coin-select {
             max-width: 100px;
+        }
+
+        .coin-balance {
+            font-weight: 600;
+        }
+
+        .fiat-balance {
+            color: #5a5a5a;
         }
     }
 
