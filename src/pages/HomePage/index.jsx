@@ -8,11 +8,9 @@ import {
   Heading,
   HStack,
   IconButton,
-  Select,
   Skeleton,
   Stack,
   Text,
-  Wrap,
 } from "@chakra-ui/react";
 import { BsPencilSquare, BsEyeSlash, BsEye } from "react-icons/bs";
 
@@ -21,6 +19,7 @@ const { userName, userAvatar, accountStatus, estimatedBalanceCoins, estimatedBal
 
 import "./style.scss";
 import EstimatedBalance from "./EstimatedBalance/index.jsx";
+import DealHistory from "./DealHistory/index.jsx";
 
 export default function HomePage() {
   const [balanceVisibility, setBalanceVisibility] = useState(true);
@@ -55,10 +54,11 @@ export default function HomePage() {
           coinOptions={["btc", "eth"]}
         />
       ) : (
-        <Skeleton height={"40px"} speed={0}>
+          <Skeleton height={"40px"} speed={0}>
           Balance was hidden
         </Skeleton>
       )}
+      <DealHistory dealHistories={fakeUserInfo.exchangeHistory}/>
     </Stack>
   );
 }

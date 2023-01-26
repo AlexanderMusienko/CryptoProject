@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Stack, HStack, Text, Divider, Center } from "@chakra-ui/react";
+import { Avatar, Stack, HStack, Text, Divider } from "@chakra-ui/react";
 import NMDiv from "../../../../components/NMDiv";
 
 export default function AdvertiserInfo({ advertiserName, ordersNum, efficiency, avatarSrc }) {

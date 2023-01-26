@@ -25,4 +25,36 @@ export default {
       hot: 0,
     },
   ],
+  exchangeHistory: [
+    {
+      coin: "btc",
+      dealType: "buy",
+      orderAmount: "11220",
+      fiat: "$",
+      deliveryDate: new Date(),
+      dealStatus: "success",
+      executorName: "John Doe",
+      executorId: 3
+    },
+    {
+      coin: "btc",
+      dealType: "buy",
+      orderAmount: "11220",
+      fiat: "$",
+      deliveryDate: new Date(),
+      dealStatus: "success",
+      executorName: "John Doe",
+      executorId: 3
+    },
+    {
+      coin: "btc",
+      dealType: "buy",
+      orderAmount: "11220",
+      fiat: "$",
+      deliveryDate: new Date(),
+      dealStatus: "success",
+      executorName: "John Doe",
+      executorId: 3
+    },
+  ]
 };
