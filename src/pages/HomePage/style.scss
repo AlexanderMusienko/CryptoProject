@@ -24,6 +24,7 @@
 
     .balance-container {
         font-size: 22px;
+        margin-bottom: 20px;
         
         .coin-select {
             max-width: 100px;
@@ -38,4 +39,13 @@
         }
     }
 
+    .deal-history-container {
+
+        .deal-item {
+            
+            .transaction-type {
+                font-weight: 600;
+            }
+        }
+    }
 }

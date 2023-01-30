@@ -34,7 +34,7 @@ export default {
       deliveryDate: new Date(),
       dealStatus: "success",
       executorName: "John Doe",
-      executorId: 3
+      executorId: 2
     },
     {
       coin: "btc",
@@ -42,7 +42,7 @@ export default {
       orderAmount: "11220",
       fiat: "$",
       deliveryDate: new Date(),
-      dealStatus: "success",
+      dealStatus: "declined",
       executorName: "John Doe",
       executorId: 3
     },
@@ -52,9 +52,9 @@ export default {
       orderAmount: "11220",
       fiat: "$",
       deliveryDate: new Date(),
-      dealStatus: "success",
+      dealStatus: "processing",
       executorName: "John Doe",
-      executorId: 3
+      executorId: 4
     },
   ]
 };
