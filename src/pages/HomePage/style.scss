@@ -11,7 +11,7 @@
         box-shadow: 0px 0px 30px 0px #e9e9e9;
         justify-content: space-between;
         align-items: center;
-        
+
         .user-avatar {
             margin-right: 1rem;
         }
@@ -25,7 +25,7 @@
     .balance-container {
         font-size: 22px;
         margin-bottom: 20px;
-        
+
         .coin-select {
             max-width: 100px;
         }
@@ -40,12 +40,44 @@
     }
 
     .deal-history-container {
+        overflow-y: scroll;
 
         .deal-item {
-            
-            .transaction-type {
-                font-weight: 600;
+            justify-content: space-between;
+            min-height: 70px;
+            padding: 0 15px;
+            border-radius: $container-border-radius;
+
+            .deal-info-container {
+
+                .coin {
+                    margin-right: 15px;
+                    font-weight: 600;
+                }
+
+                .deal-type {
+
+                }
+
+                .delivery-date {
+                    color: #4d4d4d;
+                    font-weight: lighter;
+                }
+
             }
+
+            .amount-status-container {
+                text-align: end;
+
+                .order-amount {
+                    font-weight: 600;
+                }
+
+                .delivery-status {
+                    justify-self: start;
+                }
+            }
+
         }
     }
 }
