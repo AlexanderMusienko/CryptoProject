@@ -10,15 +10,15 @@ import ExchangeDesk from "./pages/ExchangeDesk";
 import BottomNavbar from "./components/BottomNavbar";
 import PageLayout from "./components/PageLayout";
 import NotFound from "./components/NotFound";
+import ExchangeRates from "./pages/ExchangeRates";
 
 import "./context/context.js";
-import { FilterContext } from "./context/context.js";
 
 const BOTTOM_NAV_DENYLIST = ["/", "*"];
 const APP_TABS = [
   { title: "Home", icon: <Icon as={FaHome} />, path: "/home" },
   { title: "P2P", icon: <Icon as={FaPeopleArrows} />, path: "/exchange/desk" },
-  { title: "Rates", icon: <Icon as={FaChartLine} />, path: "" },
+  { title: "Rates", icon: <Icon as={FaChartLine} />, path: "/exchange/rates" },
   { title: "Profile", icon: <Icon as={FaUserAlt} />, path: "" },
 ];
 
@@ -45,6 +45,14 @@ function App() {
             element={
               <PageLayout>
                 <ExchangeDesk />
+              </PageLayout>
+            }
+          />
+          <Route
+            path="exchange/rates"
+            element={
+              <PageLayout>
+                <ExchangeRates />
               </PageLayout>
             }
           />

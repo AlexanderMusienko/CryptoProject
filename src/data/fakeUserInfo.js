@@ -60,7 +60,7 @@ export default {
       dealId: 3,
     },
     {
-      coin: "btc",
+      coin: "eth",
       dealType: "sell",
       orderAmount: "1206",
       fiat: "$",
